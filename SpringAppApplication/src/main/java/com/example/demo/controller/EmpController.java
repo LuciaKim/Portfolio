@@ -33,7 +33,7 @@ public class EmpController {
     	
     	System.out.println(empService.getEmpAll().size());
         return empService.getEmpAll();
-    }
+    } 
     
     @RequestMapping(value ="/getEmpByName/name/{name}",method = RequestMethod.GET)
     public List<Map<String, Object>> getTest( @PathVariable String name) {
@@ -44,5 +44,10 @@ public class EmpController {
     @PostMapping(value ="/getEmpByNamePost")
     public List<Map<String, Object>> getTestPost( @RequestBody Param param) {
     	return empService.getEmpByName( param.getName());
+    }
+    
+    @RequestMapping(value="/test")
+    public int test() {
+    	return 1;
     }
 }
